@@ -61,7 +61,7 @@ namespace EmployeeManagement.API.Controllers
             var employee = dbContext.Employees.Find(id);
             employee.Name = model.Name;
             dbContext.SaveChanges();
-            return Ok("Employee updated successfully.");
+            return Ok(new { Message = "Employee updated successfully"});
         }
 
 
@@ -77,7 +77,7 @@ namespace EmployeeManagement.API.Controllers
             var employee = dbContext.Employees.Find(id);
             dbContext.Remove(employee);
             dbContext.SaveChanges();
-            return Ok(new { message = "delete" });
+            return Ok(new { message = "Delete successfully." });
         }
     }
 }
